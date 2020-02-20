@@ -1,33 +1,36 @@
 html
   body
-  form(
-    action="/getting_your_courses"
-    method="post"
-  )
-    div
-      input(
-        type='text'
-        name='username'
-        placeholder='your_username'
-      )
-    div
-      input(
-        type='radio'
-        name='profession'
-        id='student'
-        value='student'
-      )
-      label(for='student') student
-    div
-      input(
+    form(
+      action="/getting_your_courses"
+      method="post"
+    )
+      div
+        input(
+          type='text'
+          name='username'
+          placeholder='your_username'
+        )
+      div
+        input(
           type='radio'
           name='profession'
-          id='professor'
-          value='professor'
-      )
-      label(for='professor') professor
-    div
-      input(
-        type='submit'
-        value='submit'
-      )
+          id='student'
+          value='student'
+        )
+        label(for='student') student
+      div
+        input(
+            type='radio'
+            name='profession'
+            id='professor'
+            value='professor'
+        )
+        label(for='professor') professor
+      div
+        input(
+          type='submit'
+          value='submit'
+        )
+    p Click here to logout after getting your course listen
+    a(href='/') Logout
+  

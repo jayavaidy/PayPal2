@@ -147,7 +147,7 @@ app.post('/registering_course',function(req,res){
 })
 app.post('/getting_your_courses',function(req,res){
   var a = req.body;
-  var courses= {}
+  flag = 0;
   const csvWritertemp = createCsvWriter({
     path:'./temp.csv',
     header:['coursename']
@@ -158,10 +158,14 @@ app.post('/getting_your_courses',function(req,res){
       for (var i = 0;i<b.length;i++){
         var c = b[i].split(',');
         if (c[0]===a.username){
+          flag = 1;
           csvWritertemp.writeRecords([{coursename:c[1]}]);
         }}
     })
+    if(flag==1)
     res.sendFile(__dirname+'/temp.csv');
+    else
+    res.send('You have not registered any courses. Please register');
   }
   else if(a.profession==='professor'){
     fs.readFile('./courselist.csv',function(err,data){
@@ -169,10 +173,14 @@ app.post('/getting_your_courses',function(req,res){
       for (var i = 0;i<b.length;i++){
         var c = b[i].split(',');
         if (c[0]===a.username){
+          flag = 1;
           csvWritertemp.writeRecords([{coursename:c[1]}]);
         }}
     })
+    if(flag==1)
     res.sendFile(__dirname+'/temp.csv');
+    else
+    res.send('You have not registered any courses. Please register');
   }
 })
 app.listen(3000);
