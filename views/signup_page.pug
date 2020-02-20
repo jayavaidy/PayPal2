@@ -1,0 +1,60 @@
+html
+  head
+    title Sign Up
+  body
+    h1 Sign Up
+    form(
+      action="/signup_page_details"
+      method="post"
+      )
+      div
+        input(
+          type='text'
+          name='username' 
+          placeholder="username"
+        )
+      div
+        input(
+          type='text'
+          name='age'
+          placeholder="Age"
+        )
+      div 
+        input(
+          type='text'
+          name='branch'
+          placeholder="Branch"
+        )
+      div
+        input(
+          type='text'
+          name='institute'
+          placeholder="Institute"
+        )
+      div
+        input(
+            type='password'
+            name='password'
+            placeholder="password"
+        )
+      div
+        input(
+          type='radio'
+          name='profession'
+          id='student'
+          value='student'
+        )
+        label(for='student') student
+      div
+        input(
+            type='radio'
+            name='profession'
+            id='professor'
+            value='professor'
+        )
+        label(for='professor') professor
+      div
+        input(
+          type='submit'
+          value='submit'
+        )

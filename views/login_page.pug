@@ -1,0 +1,41 @@
+html
+  head
+    title Login
+  body
+    form(
+      action="/login_page_details"
+      method="post"
+    )
+      div
+        input(
+          type='text'
+          name='Username'
+          placeholder='username'
+        )
+      div
+        input(
+          type='password'
+          name='Password'
+          placeholder='password'
+        )
+      div
+        input(
+            type='radio'
+            name='profession'
+            id='student'
+            value='student'
+          )
+        label(for='student') student
+      div
+        input(
+              type='radio'
+              name='profession'
+              id='professor'
+              value='professor'
+          )
+        label(for='professor') professor
+      div
+        input(
+          type='submit'
+          value='submit'
+        )
